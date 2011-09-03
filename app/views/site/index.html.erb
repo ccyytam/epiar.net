@@ -1,0 +1,19 @@
+<div id="banner">&nbsp;</div>
+
+<div class="post">
+	<h1 class="title">Welcome to Epiar </h1>
+	<div class="entry">
+		<p><img src="images/img06.jpg" alt="" width="140" height="125" class="left" />Epiar is an <a href="http://www.opensource.org/docs/definition.php">open source</a>, open-ended space action/trading game. On this site you can <a href="/download">download the full version</a> of the game for free, <a href="/news">read the latest news</a> about game development, meet the <a href="/pipermail/epiar-devel/">developers</a> of the game, and even <a href="/git">access the source code</a>. If you're unfamiliar with Epiar, please read our <a href="/whatisepiar">introduction</a>.</p>
+	</div>
+</div>
+
+<% @news.each do |article| %>
+	<div class="post">
+		<h1 class="title"><a href="/news/<%= article.posted.year %>/<%= article.posted.strftime("%m") %>/<%= article.posted.strftime("%d") %>/<%= article.slug %>"><%= article.title %></a></h1>
+		<div class="entry"><%= article.body.html_safe %></div>
+		<div class="meta">
+			<p class="byline">Posted on <%= article.posted %> by <a href="/user/topher"><%= article.user.name %></a></p>
+			<p class="links"><a href="#" class="more"><s>Read full article</s></a> <b>|</b> <a href="#" class="comments">Comments (0)</a></p>
+		</div>
+	</div>
+<% end %>

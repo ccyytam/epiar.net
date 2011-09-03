@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design is under a Creative Commons Attribution 2.5 License
+Content is Copyright (C) 2009 Christopher Thielen
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>epiar.net</title>
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="Epiar is an open source space arcade, action, adventure, trading game written in C and licensed under the GNU GPL. It is similar to Solar Winds or Escape Velocity. It is playable under Linux, Windows, Mac OS X, and FreeBSD, and may well be ported to other platforms." />
+<%= stylesheet_link_tag("default.css") %>
+<%= javascript_include_tag("jquery-1.6.1.min.js") %>
+<%= javascript_include_tag("jquery.form.svn20090126.js") %>
+<%= javascript_include_tag("jquery.lightbox-0.5.pack.js") %>
+<%= stylesheet_link_tag("jquery.lightbox-0.5.css") %>
+</head>
+<body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("div[class=post] a[rel=lightbox]").lightBox();
+	});
+</script>
+
+<div id="logo-wrap">
+<div id="logo">
+	<h1><a href="/">Epiar.net </a></h1>
+	<h2> Open source space arcade, trading, adventure game</h2>
+</div>
+</div>
+
+<!-- start header -->
+<div id="header">
+	<div id="menu">
+		<ul>
+			<li><a href="/news" class="current_page_item">News</a></li>
+			<li><a href="/download">Download</a></li>
+			<li><a href="/screenshots">Screenshots</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</div>
+</div>
+<!-- end header -->
+<!-- start page -->
+<div id="wrapper">
+<div id="wrapper-btm">
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+
+		<%= yield %>
+
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li id="search">
+				<h2>Search</h2>
+				<form method="GET" action="/search">
+					<fieldset>
+					<input type="text" id="s" name="s" value="" /><br />
+					<input type="submit" id="x" value="Search" />
+					</fieldset>
+				</form>
+			</li>
+			<li>
+				<h2>Download</h2>
+				<h3>v 0.5.0</h3>
+				<ul>
+					<li><a href="/files/epiar/releases/0.1.0/epiar-0.1.0.tar.bz2">Source (compressed)</a></li>
+					<li><a href="/subversion">Source (Subversion)</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Documentation</h2>
+				<ul>
+					<li><a href="/whatisepiar">What is Epiar?</a></li>
+					<li><a href="/installation">Installation</a></li>
+					<li><a href="/howtoplay">How to Play</a></li>
+					<li><a href="/faq">FAQ</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Extending/Editing</h2>
+				<ul>
+					<li><a href="/editingtutorial">Tutorial</a></li>
+					<li><a href="/editingfaq">Editing FAQ</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>Developers</h2>
+				<ul>
+					<li><a href="/trac/report/1">Open Tickets</a></li>
+					<li><a href="/trac">Trac Wiki</a></li>
+					<li><a href="/trac/roadmap">Roadmap</a></li>
+				</ul>
+			</li>
+			<li>
+				<h2>tools </h2>
+				<ul>
+					<li><a href="/trac/wiki">Wiki</a></li>
+					<li><a href="/irc">IRC</a></li>
+					<li><a href="/mailinglists">Mailing Lists</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+</div>
+</div>
+<!-- start footer -->
+<div id="footer">
+	<div id="footer-wrap">
+	<p id="legal">(c) 2001-2011 Christopher Thielen. Design by <a href="http://www.freecsstemplates.org/">freecsstemplates.org</a>, design licensed under the <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>. <a href="/weblog">Webmaster Log</a>.<br />
+</p>
+	</div>
+</div>
+<!-- end footer -->
+
+<!-- Google analytics -->
+<!--<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9045980-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>-->
+
+</body>
+</html>
