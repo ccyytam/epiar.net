@@ -13,23 +13,23 @@
 ActiveRecord::Schema.define(:version => 20110519044542) do
 
   create_table "news", :force => true do |t|
-    t.string  "title",   :limit => 128, :null => false
-    t.integer "user_id"
-    t.text    "body"
-    t.date    "posted",                 :null => false
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "body"
+    t.date     "posted"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "news", ["user_id"], :name => "author"
-
   create_table "users", :force => true do |t|
-    t.string   "name",     :limit => 128, :null => false
-    t.string   "password", :limit => 40,  :null => false
-    t.integer  "role",     :limit => 1,   :null => false
-    t.string   "email",    :limit => 128, :null => false
-    t.string   "cookie",   :limit => 32,  :null => false
-    t.string   "session",  :limit => 32,  :null => false
-    t.string   "ip",       :limit => 15,  :null => false
+    t.string   "name"
+    t.string   "password"
+    t.string   "role"
+    t.string   "email"
     t.datetime "joined"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
