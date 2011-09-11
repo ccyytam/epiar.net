@@ -1,2 +1,7 @@
-<h1>News#edit</h1>
-<p>Find me in app/views/news/edit.html.erb</p>
+<% if notice %>
+<p><%= notice %></p>
+<% end %>
+
+<h1>Editing: <%= @article.title %></h1>
+		
+<%= render 'form' %>

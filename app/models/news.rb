@@ -3,4 +3,8 @@ class News < ActiveRecord::Base
   @@per_page = 4
   
   belongs_to :user
+  
+  def to_param
+    slug
+  end
 end

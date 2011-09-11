@@ -10,7 +10,7 @@ class NewsController < ApplicationController
   end
 
   def show
-    @article = News.find_by_slug(params[:slug])
+    @article = News.find_by_slug(params[:id])
     
     respond_to do |format|
       format.html
@@ -19,14 +19,14 @@ class NewsController < ApplicationController
   end
 
   def edit
-    @article = News.find_by_slug(params[:slug])
+    @article = News.find_by_slug(params[:id])
   end
 
   def update
-    @article = News.find_by_slug(params[:slug])
+    @article = News.find_by_slug(params[:id])
 
     respond_to do |format|
-      if @article.update_attributes(params[:article])
+      if @article.update_attributes(params[:news])
         format.html { redirect_to(@article, :notice => 'Article was successfully updated.') }
       else
         format.html { render :action => "edit" }
@@ -35,7 +35,7 @@ class NewsController < ApplicationController
   end
 
   def destroy
-    @article = News.find_by_slug(params[:slug])
+    @article = News.find_by_slug(params[:id])
     @article.destroy
 
     respond_to do |format|
@@ -54,9 +54,7 @@ class NewsController < ApplicationController
   
   # POST /groups
   def create
-    @article = News.new(params[:article])
-    
-    debugger
+    @article = News.new(params[:news])
     
     @article.slug = @article.title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
 
