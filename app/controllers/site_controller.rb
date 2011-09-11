@@ -1,5 +1,4 @@
 class SiteController < ApplicationController
-  
   def index
     @news = News.all :limit => 4, :order => "posted DESC"
     

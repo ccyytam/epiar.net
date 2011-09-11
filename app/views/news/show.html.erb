@@ -1,8 +1,8 @@
 <div class="post">
-	<h1 class="title"><a href="/news/<%= @article.created_at.year %>/<%= @article.created_at.strftime("%m") %>/<%= @article.created_at.strftime("%d") %>/<%= @article.slug %>"><%= @article.title %></a></h1>
-	<div class="entry"><%= @article.body.html_safe %></div>
+	<h1 class="title"><a href="/news/<%= @news.created_at.year %>/<%= @news.created_at.strftime("%m") %>/<%= @news.created_at.strftime("%d") %>/<%= @news.slug %>"><%= @news.title %></a></h1>
+	<div class="entry"><%= @news.body.html_safe %></div>
 	<div class="meta">
-		<p class="byline">Posted on <%= @article.created_at.strftime("%B %e, %Y") %> by <a href="/users/<%= @article.user.name %>"><%= @article.user.name %></a></p>
+		<p class="byline">Posted on <%= @news.created_at.strftime("%B %e, %Y") %> by <a href="/users/<%= @news.user.name %>"><%= @news.user.name %></a></p>
 		<p class="links"><a href="#" class="more"><s>Read full article</s></a> <b>|</b> <a href="#" class="comments"><s>Comments (0)</s></a></p>
 	</div>
 </div>

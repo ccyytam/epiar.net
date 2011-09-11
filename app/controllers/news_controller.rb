@@ -1,4 +1,7 @@
 class NewsController < ApplicationController
+  before_filter :load_article
+  filter_access_to :all, :attribute_check => true
+  
   def index
     #@news = News.all :limit => 4, :order => "posted DESC"
     @news = News.page(params[:page]).order('posted DESC')
@@ -10,8 +13,6 @@ class NewsController < ApplicationController
   end
 
   def show
-    @article = News.find_by_slug(params[:id])
-    
     respond_to do |format|
       format.html
       format.json
@@ -65,5 +66,11 @@ class NewsController < ApplicationController
         format.html { render :action => "new" }
       end
     end
+  end
+  
+  protected
+  
+  def load_article
+    @news = News.find_by_slug(params[:id])
   end
 end
