@@ -21,3 +21,5 @@ gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_aut
 gem 'capistrano'
 
 gem 'jquery-rails'
+
+gem 'ruby-debug19', :require => 'ruby-debug'

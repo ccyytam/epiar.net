@@ -1,6 +1,6 @@
 /*
 *= require_self
-*= require_tree .
+*= require_tree ./common
 */
 
 /*
@@ -437,7 +437,7 @@ table.screenshots td {
 }
 
 .pagination a.current {
-	background: #004a95 url(<%=asset_path "bg-button-blue.gif"%>) top left repeat-x !important;
+	background: #004a95 url(<%= asset_path "bg-button-blue.gif" %>) top left repeat-x !important;
 	border-color: #004994 !important;
 	color: #fff !important;
 }
