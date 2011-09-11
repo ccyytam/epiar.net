@@ -23,6 +23,7 @@ cd into/the/base/of/the/project
 gem install bundler (presumably 1.9.2@epiar is an empty gemset)
 bundle install
 bundle exec rake db:migrate
+bundle exec rake bootstrap:all (creates any necessary default data)
 rails server
 (site now up at localhost:3000)
 

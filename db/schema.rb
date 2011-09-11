@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110911194304) do
+ActiveRecord::Schema.define(:version => 20110911230002) do
 
   create_table "news", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(:version => 20110911194304) do
     t.text     "body"
     t.date     "posted"
     t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
