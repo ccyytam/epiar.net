@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   filter_access_to :all, :attribute_check => true
   
   def index
-    #@news = News.all :limit => 4, :order => "posted DESC"
     @article = Article.page(params[:page]).order('posted DESC')
 
     respond_to do |format|
