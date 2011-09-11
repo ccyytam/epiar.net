@@ -12,8 +12,8 @@
 		<h1 class="title"><%= link_to article.title, article.link %></h1>
 		<div class="entry"><%= article.body.html_safe %></div>
 		<div class="meta">
-			<p class="byline">Posted on <%= article.posted %> by <a href="/user/topher"><%= article.user.name %></a></p>
-			<p class="links"><a href="#" class="more"><s>Read full article</s></a> <b>|</b> <a href="#" class="comments">Comments (0)</a></p>
+			<p class="byline">Posted on <%= article.posted %> by <%= link_to article.user.name, article.user %></p>
+			<p class="links"><%= link_to "Read full article", article.link, :class => "more" %> <b>|</b> <a href="#" class="comments">Comments (0)</a></p>
 		</div>
 	</div>
 <% end %>

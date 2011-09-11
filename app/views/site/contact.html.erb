@@ -1,2 +1,54 @@
-<h1>Site#contact</h1>
-<p>Find me in app/views/site/contact.html.erb</p>
+<div class="post">
+	<h1 class="title">Contact</h1>
+	<div class="entry">
+		<p>Use the form below to contact the webmaster for all inqueries. We are not able to provide e-mail addresses directly due to spamming problems, and we require you answer a simple mathematics question to verify your humanity.</p>
+		<form method="POST" action="/contact" name="contact">
+			<label for="name">Name</label>
+			<input type="text" name="name" value="Your name" maxlength="128" /><br />
+			<label for="email">E-Mail</label>
+			<input type="text" name="email" value="Your e-mail address" maxlength="320" /><br />
+			<label for="message">Message</label>
+			<textarea name="message" rows="7" cols="45">Your message</textarea><br />
+			<label for="verify">Verify: 2 * 7 = </label>
+			<input type="text" name="verify" value="" size="3" maxlength="3" /><br />
+			<input type="hidden" name="answer" value="" />
+			<label for="submit">&nbsp;</label>
+			<input type="submit" name="submit" value="Send" />
+			<script type="text/javascript">
+				$(document).ready(function() {
+					// Make field default text erase on focus
+					$("input,textarea").focus(function() {
+						if($(this).val() == "Your name") {
+							$(this).val("");
+						} else if($(this).val() == "Your e-mail address") {
+							$(this).val("");
+						} else if($(this).val() == "Your message") {
+							$(this).val("");
+						}
+					});
+
+					// Set up the mathematics question
+					{
+						// generate two digits in [1,12]
+						var first_digit = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+						var second_digit = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+						// decide one of two basic operations (+*) with a random digit in [1,4] and record the answer for later checking
+						var operator = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+						if(operator == 1) {
+							operator = "+";
+							answer = first_digit + second_digit;
+						} else if(operator == 2) {
+							operator = "*";
+							answer = first_digit * second_digit;
+						}
+						$("label[for=verify]").text("Verify: " + first_digit + " " + operator + " " + second_digit + " = ");
+						$("input[name=answer]").val(answer);
+					}
+				});
+			</script>
+		</form>
+	</div>
+	<div class="meta">
+		<p class="byline">Last updated September 11, 2011 by <a href="/user/topher">topher</a></p>
+	</div>
+</div>
