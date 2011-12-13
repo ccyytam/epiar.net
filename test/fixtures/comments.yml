@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  news_id: 1
+  author_name: MyString
+  site_url: MyString
+  content: MyText
+
+two:
+  news_id: 1
+  author_name: MyString
+  site_url: MyString
+  content: MyText

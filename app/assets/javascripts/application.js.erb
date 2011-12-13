@@ -1,0 +1,10 @@
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require_tree .
+
+$(document).ready(function() {
+  // Set WYSIWYG editor
+  $('.wysiwyg').wysiwyg({css: "<%= asset_path "wysiwyg/wysiwyg.css" %>"});
+
+});

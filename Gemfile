@@ -17,3 +17,8 @@ end
 
 # For deployment
 gem "capistrano"
+
+gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
+
+# Deploy with Capistrano
+gem 'capistrano'

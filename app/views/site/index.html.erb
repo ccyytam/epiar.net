@@ -3,17 +3,17 @@
 <div class="post">
 	<h1 class="title">Welcome to Epiar </h1>
 	<div class="entry">
-		<p><%= image_tag "img06.jpg" %><img src="" alt="" width="140" height="125" class="left" />Epiar is an <a href="http://www.opensource.org/docs/definition.php">open source</a>, open-ended space action/trading game. On this site you can <a href="/download">download the full version</a> of the game for free, <a href="/news">read the latest news</a> about game development, meet the <a href="/pipermail/epiar-devel/">developers</a> of the game, and even <a href="/git">access the source code</a>. If you're unfamiliar with Epiar, please read our <a href="/whatisepiar">introduction</a>.</p>
+		<p><%= image_tag "img06.jpg", :class => "left" %>Epiar is an <a href="http://www.opensource.org/docs/definition.php">open source</a>, open-ended space action/trading game. On this site you can <a href="/download">download the full version</a> of the game for free, <a href="/news">read the latest news</a> about game development, meet the <a href="/pipermail/epiar-devel/">developers</a> of the game, and even <a href="/git">access the source code</a>. If you're unfamiliar with Epiar, please read our <a href="/whatisepiar">introduction</a>.</p>
 	</div>
 </div>
 
 <% @news.each do |article| %>
 	<div class="post">
-		<h1 class="title"><a href="/news/<%= article.posted.year %>/<%= article.posted.strftime("%m") %>/<%= article.posted.strftime("%d") %>/<%= article.slug %>"><%= article.title %></a></h1>
+		<h1 class="title"><%= link_to article.title, article.link %></h1>
 		<div class="entry"><%= article.body.html_safe %></div>
 		<div class="meta">
-			<p class="byline">Posted on <%= article.posted %> by <a href="/user/topher"><%= article.user.name %></a></p>
-			<p class="links"><a href="#" class="more"><s>Read full article</s></a> <b>|</b> <a href="#" class="comments">Comments (0)</a></p>
+			<p class="byline">Posted on <%= article.posted %> by <%= link_to article.user.name, article.user %></p>
+			<p class="links"><%= link_to "Read full article", article.link, :class => "more" %> <b>|</b> <a href="#" class="comments">Comments (0)</a></p>
 		</div>
 	</div>
 <% end %>
