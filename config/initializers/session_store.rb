@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-EpiarNet::Application.config.session_store :cookie_store, :key => '_epiar_net_session'
+EpiarNet::Application.config.session_store :cookie_store, key: '_epiar_net_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
